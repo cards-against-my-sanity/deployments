@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-server
+  namespace: insanityid
+spec:
+  selector:
+    matchLabels:
+      app: auth-server
+  template:
+    metadata:
+      labels:
+        app: auth-server
+    spec:
+      containers:
+      - name: auth-server
+        image: cams-auth-local:latest
+        imagePullPolicy: IfNotPresent
+        envFrom:
+          - configMapRef: 
+              name: auth-server-cm
+          - secretRef: 
+              name: auth-server-secret
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: cert-volume
+          mountPath: /etc/ssl/certs
+          readOnly: true
+        resources:
+          limits:
+            cpu: 1
+            memory: 1024Mi
+          requests:
+            cpu: 500m
+            memory: 768Mi
+      volumes:
+      - name: cert-volume
+        secret:
+          secretName: auth-server-secret
+          items:
+          - key: public.pem
+            path: public.pem
+          - key: private.pem
+            path: private.pem
