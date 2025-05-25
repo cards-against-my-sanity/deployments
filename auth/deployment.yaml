@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: auth-server
-        image: auth:0.0.2-SNAPSHOT
+        image: auth:0.0.3-SNAPSHOT
         imagePullPolicy: IfNotPresent
         envFrom:
           - configMapRef: 

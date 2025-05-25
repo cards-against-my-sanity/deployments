@@ -23,7 +23,7 @@ data:
   AUTH_KEY_PRIVATE_PATH: /etc/ssl/certs/private.pem
   AUTH_KEY_ID: faac112a-1060-4bd7-9582-a4590390ee67
 
-  AUTH_SERVER_ISSUER_URI: https://auth.cams.local
+  AUTH_SERVER_ISSUER_URI: http://auth.cams.local
   WEB_CLIENT_ID: clientId
-  WEB_CLIENT_REDIRECT_URI: http://auth.cams.local
-  WEB_CLIENT_POST_LOGOUT_REDIRECT_URI: http://auth.cams.local
+  WEB_CLIENT_REDIRECT_URI: http://localhost:3000/api/auth/callback/insanity
+  WEB_CLIENT_POST_LOGOUT_REDIRECT_URI: http://localhost:3000
