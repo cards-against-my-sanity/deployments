@@ -1,8 +1,8 @@
 apiVersion: gateway.networking.k8s.io/v1
 kind: HTTPRoute
 metadata:
-  name: auth-server-route
-  namespace: insanityid
+  name: decker-route
+  namespace: cams-decker
   annotations:
     konghq.com/strip-path: 'true'
 spec:
@@ -10,13 +10,13 @@ spec:
   - name: kong
     namespace: management-kong
   hostnames:
-  - "id.insanity.local"
+  - "decker.cams.local"
   rules:
   - matches:
     - path:
         type: PathPrefix
         value: /
     backendRefs:
-    - name: auth-server-svc
+    - name: decker-svc
       kind: Service
       port: 80

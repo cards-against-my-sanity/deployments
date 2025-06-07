@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: decker-svc
+  namespace: cams-decker
+spec:
+  selector:
+    app: decker
+  ports:
+  - port: 80
+    targetPort: 8080

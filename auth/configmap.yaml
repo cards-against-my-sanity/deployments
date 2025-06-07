@@ -4,7 +4,7 @@ metadata:
   name: auth-server-cm
   namespace: insanityid
 data:
-  APP_BASE_URL: http://auth.cams.local
+  APP_BASE_URL: http://id.insanity.local
 
   DDL_AUTO: validate
   DB_HOST: host.minikube.internal
@@ -16,14 +16,14 @@ data:
   SMTP_STARTTLS_ENABLE: "true"
   SMTP_STARTTLS_REQUIRED: "true"
 
-  LOG_LEVEL: INFO
+  LOG_LEVEL: TRACE
   LOG_REQUEST_DETAILS: "true"
 
   AUTH_KEY_PUBLIC_PATH: /etc/ssl/certs/public.pem
   AUTH_KEY_PRIVATE_PATH: /etc/ssl/certs/private.pem
   AUTH_KEY_ID: faac112a-1060-4bd7-9582-a4590390ee67
 
-  AUTH_SERVER_ISSUER_URI: http://auth.cams.local
+  AUTH_SERVER_ISSUER_URI: http://id.insanity.local
   WEB_CLIENT_ID: clientId
-  WEB_CLIENT_REDIRECT_URI: http://localhost:3000/api/auth/callback/insanity
-  WEB_CLIENT_POST_LOGOUT_REDIRECT_URI: http://localhost:3000
+  WEB_CLIENT_REDIRECT_URI: http://cams.local:3000/api/auth/callback/insanity
+  WEB_CLIENT_POST_LOGOUT_REDIRECT_URI: http://cams.local:3000

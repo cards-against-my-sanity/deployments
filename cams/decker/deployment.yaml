@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: decker
+  namespace: cams-decker
+spec:
+  selector:
+    matchLabels:
+      app: decker
+  template:
+    metadata:
+      labels:
+        app: decker
+    spec:
+      containers:
+      - name: decker
+        image: decker:0.0.1-SNAPSHOT-2686aa7
+        imagePullPolicy: IfNotPresent
+        envFrom:
+          - configMapRef: 
+              name: decker-cm
+          - secretRef: 
+              name: decker-secret
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: 1000m
+            memory: 1024Mi
+          requests:
+            cpu: 500m
+            memory: 768Mi
