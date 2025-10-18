@@ -8,10 +8,10 @@ data:
 
   DDL_AUTO: validate
   DB_HOST: host.minikube.internal
-  DB_PORT: "3306"
+  DB_PORT: "5432"
   DB_SCHEMA_NAME: cams_decker
 
-  LOG_LEVEL: INFO
+  LOG_LEVEL: DEBUG
   LOG_REQUEST_DETAILS: "true"
 
   CACHE_NAMES: "decks,deckById,cardsByDeckIds"

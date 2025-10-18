@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: decker
-        image: decker:0.0.1-SNAPSHOT-2686aa7
+        image: decker:0.0.1-SNAPSHOT-9f0f2bc
         imagePullPolicy: IfNotPresent
         envFrom:
           - configMapRef: 

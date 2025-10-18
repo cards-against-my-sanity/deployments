@@ -8,7 +8,7 @@ metadata:
 spec:
   parentRefs:
   - name: kong
-    namespace: management-kong
+    namespace: kong
   hostnames:
   - "decker.cams.local"
   rules:
