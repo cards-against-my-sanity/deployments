@@ -11,12 +11,17 @@ data:
   DB_PORT: "5432"
   DB_SCHEMA_NAME: cams_auth
 
+  REDIS_HOST: host.minikube.internal
+  REDIS_PORT: "6379"
+
+  SESSION_TIMEOUT_DURATION: "6h"
+
   SMTP_PORT: "587"
   SMTP_USE_AUTH: "true"
   SMTP_STARTTLS_ENABLE: "true"
   SMTP_STARTTLS_REQUIRED: "true"
 
-  LOG_LEVEL: TRACE
+  LOG_LEVEL: DEBUG
   LOG_REQUEST_DETAILS: "true"
 
   AUTH_SERVER_ISSUER_URI: http://id.insanity.local
